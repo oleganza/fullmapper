@@ -55,7 +55,7 @@ describe FullMapper do
     
     # Model#new (as well as others):
     def new(*args, &blk)
-      FM::Repository.thread_context_repo.new(*args, &blk)
+      FM::Repository.thread_context_repo.new(self, *args, &blk)
     end
     
   end
