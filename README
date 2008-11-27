@@ -1,0 +1,22 @@
+FullMapper README
+
+This is a purely experimental attempt to build a minimalistic consistent ORM on base of DataObjects and pieces of dm-core. Make the API small, but without silly bugs and easy to extend and hack.
+
+TODO
+
+1. include FM::Resource into modules as well as classes
+2. specify indexes separately of properties
+3. extract all the additionaly params and lazy naming conventions into separate modules
+4. keep all globals-level configuartions in a separate files
+5. fully map instances and collections into memory: remove the need in manual #reload
+6. pluggable strategies for caching, sharding and delayed execution.
+7. minimal public API. E.g. do not use attribute_set when redefining accessor, rather call super and use an anonymous module with the default definition to catch the value.
+8. consistent chainable collections and kick-methods.
+9. cache invalidation api for the raw-sql interface (specify how to invalidate sparse identity/collection maps when sql is executed). apply for any kind of backend as well.
+10. extensible consistent polymorphism features:
+  - polymorphic instances
+  - polymorphic associations
+  - effective "late binding" proxy entities for partial polymorphic relations
+    (people and projects can host activities, folders, documents etc.)
+11. chainable storages (ram <-> memcache <-> backend1 <-> backend2)
+
