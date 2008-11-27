@@ -49,6 +49,7 @@ describe FullMapper do
     def repo.thread_context
       FM::Repository.push_thread_context_repo(self)
       yield
+    ensure
       FM::Repository.pop_thread_context_repo
     end
     
